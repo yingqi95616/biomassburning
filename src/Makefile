@@ -27,7 +27,7 @@ genfire.exe: $(objects)
 	 $(F90) $(FFLAGS) $(FLINK) -o genfire.exe $(objects) $(LIBS) 
 
 mergefire.exe: $(objects1)
-	 $(F90) $(FFLAGS) $(FLINK) -o mergefire.exe $(objects) $(LIBS) 
+	 $(F90) $(FFLAGS) $(FLINK) -o mergefire.exe $(objects1) $(LIBS) 
 
 .f.o :
 	$(F90) $(FFLAGS) -c $< $(INCLUDE) $(LIBS) 
