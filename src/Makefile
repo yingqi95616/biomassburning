@@ -1,4 +1,19 @@
-include ../../Makeinclude.txt
+# intel compiler
+F90 = ifort
+FC  = ifort
+CC  = icc
+
+# Library (must be compiled with the same Fortran compiler)
+LIBS = -L/scratch/user/qying/opt/ioapi-3.2/Linux2_x86_64ifort -lioapi \
+            -L/scratch/user/qying/opt/netcdf-4.7.4-intel/lib -lnetcdff -lnetcdf
+INCLUDE = -I/scratch/user/qying/opt/netcdf-4.7.4-intel/include \
+          -I/scratch/user/qying/opt/ioapi-3.2/ioapi/fixed_src \
+          -I/scratch/user/qying/opt/ioapi-3.2/Linux2_x86_64ifort\
+          -I./
+
+FFLAGS = -132 -O0 -check all -traceback -g 
+CFLAGS = -O3 -D_UNDERSCORE
+FLINK = -fopenmp 
 
 exec = genfire.exe 
 default = $(exec)
